@@ -10,9 +10,7 @@ module flagCheck(bits, zero, over, cOut, neg, cout64, cin64);
 	wire value; // value used in noring each bit for checking if zero
 	
 	// true if every bit is zero
-	initial begin
-	value = bits[0];
-	end
+	assign value = bits[0];
 	
 	genvar i;
 	generate
@@ -21,9 +19,7 @@ module flagCheck(bits, zero, over, cOut, neg, cout64, cin64);
 		end
 	endgenerate
 	
-	initial begin
-	zero = value;
-	end
+	assign zero = value;
 	
 	// xor of carry in and carry out of 64th bit
 	xor cinXcout(over, cin64, cout64);
