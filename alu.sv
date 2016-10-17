@@ -12,17 +12,16 @@ module alu(a, b, cin, cout, out, control);
 	wire [7:0] results; // all resulting operations
 	
 	// 000 b
-	always_comb begin
-	results[0] = b;
+	assign results[0] = b;
 	
 	// 010 a+b, TO DO: implement these with adder
-	results[2] = 0;
-	carryOut[0] = 0;
-	 
+	assign results[2] = 0;
+	assign carryOut[0] = 0;
+	
 	// 011 a-b, TO DO: implement these with adder
-	results[3] = 0;
-	carryOut[1] = 0;
-	end
+	assign results[3] = 0;
+	assign carryOut[1] = 0;
+
 	// 100 a&b
 	and aANDb(results[4], a, b);
 	
